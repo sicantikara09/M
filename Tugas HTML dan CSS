@@ -51,6 +51,29 @@
             border: 1px solid #ccc;
         }
 
+        /* Mengatur container radio button (Pria & Wanita) */
+        .radio-group {
+            display: flex;              /* Membuat elemen sejajar horizontal */
+            align-items: center;        /* Menyelaraskan posisi vertikal (tengah) */
+            gap: 30px;                  /* Jarak antar pilihan (Pria & Wanita) */
+            margin-bottom: 15px;        /* Jarak ke elemen bawah */
+        }
+
+        /* Mengatur label yang membungkus radio + teks */
+        .radio-group label {
+            display: flex;              /* Supaya radio dan teks sejajar */
+            align-items: center;        /* Menyelaraskan radio dengan teks */
+            gap: 6px;                   /* Jarak antara radio dan tulisan */
+            font-weight: normal;        /* Menghilangkan bold dari label */
+            cursor: pointer;            /* Cursor berubah jadi tangan saat hover */
+        }
+
+        /* Mengatur ukuran radio button */
+        .radio-group input[type="radio"] {
+            width: auto;                /* Override dari input global (yang 100%) */
+            margin: 0;                  /* Menghapus margin default agar rapi */
+        }
+
         /* Group tombol */
         .button-group {
             display: flex;
@@ -112,6 +135,12 @@
         tr:hover {
             background: #f9f9f9;
         }
+
+        td:last-child {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
     </style>
 </head>
 
@@ -135,8 +164,14 @@
         <textarea></textarea>
 
         <label>Jenis Kelamin</label>
-        <input type="radio"> Pria
-        <input type="radio"> Wanita
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="jk"> Pria
+            </label>
+            <label>
+                <input type="radio" name="jk"> Wanita
+            </label>
+        </div>
 
         <!--Memilih data kita seperti tanggal, bulan dan tahun-->
         <label>Tanggal Lahir</label>
